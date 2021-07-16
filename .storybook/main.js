@@ -64,6 +64,8 @@ module.exports = {
     config.resolve.plugins =
       config.resolve.plugins == null ? customPlugins : [...config.resolve.plugins, ...customPlugins];
 
+    config.resolve.symlinks = true;
+
     // Need to custom alias react-dom and scheduler for component profiling in production
     // mode. Without doing so, no React profiling data can be extracted from stories
     // When they are deployed.

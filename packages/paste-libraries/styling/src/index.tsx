@@ -1,6 +1,4 @@
 // Base styling system (emotion)
-import styled from '@emotion/styled';
-
 // Custom styling application (styled-system)
 // https://github.com/styled-system/styled-system/tree/master/
 export type {
@@ -18,7 +16,18 @@ export {themeGet} from '@styled-system/theme-get';
 export {createShouldForwardProp, props} from '@styled-system/should-forward-prop';
 export * from 'styled-system';
 
-export type {StyledComponent, Interpolation} from '@emotion/styled';
+export {default as styled} from '@emotion/styled';
+export type {
+  ArrayInterpolation,
+  ComponentSelector,
+  FunctionInterpolation,
+  Interpolation,
+  StyledComponent,
+  StyledOptions,
+  CreateStyledComponent,
+  StyledTags,
+  CreateStyled,
+} from '@emotion/styled';
 export type {SerializedStyles} from '@emotion/react';
 export {
   Global as StylingGlobals,
@@ -28,5 +37,3 @@ export {
   ThemeProvider,
   withTheme,
 } from '@emotion/react';
-
-export {styled};

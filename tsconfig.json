@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "composite": true,
     "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
@@ -24,8 +25,19 @@
     "noUnusedParameters": true,
     "strict": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "paths": {
+      "@emotion/styled": ["./packages/paste-libraries/styling/node_modules/@emotion/styled"],
+      "@emotion/react": ["./packages/paste-libraries/styling/node_modules/@emotion/react"],
+      "@twilio-paste/styling-library": ["./packages/paste-libraries/styling/src/index.tsx"]
+    }
   },
+  "files": [],
+  "references": [
+    {"path": "./packages/component"},
+    {"path": "./packages/library"},
+    {"path": "./packages/shared-library"}
+  ],
   "include": ["packages/**/*", "dangerfile.ts", ".danger/**/*", "./.jest/@types/index.d.ts", "tools/**/*"],
   "exclude": [
     "node_modules",

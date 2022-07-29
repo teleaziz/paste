@@ -19,6 +19,7 @@
     "/packages/paste-core/components/chat-log",
     "/packages/paste-core/components/checkbox",
     "/packages/paste-libraries/clipboard-copy",
+    "/packages/paste-core/components/code-block",
     "/packages/paste-color-contrast-utils",
     "/packages/paste-core/components/combobox",
     "/packages/paste-core/primitives/combobox",

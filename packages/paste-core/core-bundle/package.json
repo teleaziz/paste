@@ -82,6 +82,7 @@
     "@twilio-paste/stack": "^4.0.1",
     "@twilio-paste/style-props": "^5.0.2",
     "@twilio-paste/styling-library": "^1.0.2",
+    "@twilio-paste/syntax-highlighter": "^0.0.1",
     "@twilio-paste/table": "^4.0.1",
     "@twilio-paste/tabs": "^4.0.2",
     "@twilio-paste/tabs-primitive": "^0.2.8",

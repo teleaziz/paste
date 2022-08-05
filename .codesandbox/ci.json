@@ -62,6 +62,7 @@
     "/packages/paste-core/layout/stack",
     "/packages/paste-style-props",
     "/packages/paste-libraries/styling",
+    "/packages/paste-libraries/syntax-highlighter",
     "/packages/paste-core/components/table",
     "/packages/paste-core/components/tabs",
     "/packages/paste-core/primitives/tabs",

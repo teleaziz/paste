@@ -141,6 +141,9 @@ lab = TkLabel.new(root) {
       <SyntaxHighlighter language={SnippetLanguage.SHELL} style={SyntaxHighlighterTheme}>
         {`$ curl -G https://api.twilio.com/2010-04-01/Accounts -u '[YOUR ACCOUNT SID]:[YOUR AUTH TOKEN]'`}
       </SyntaxHighlighter>
+      <SyntaxHighlighter language="shell-session" style={SyntaxHighlighterTheme}>
+        {`$ curl -G https://api.twilio.com/2010-04-01/Accounts -u '[YOUR ACCOUNT SID]:[YOUR AUTH TOKEN]'`}
+      </SyntaxHighlighter>
     </>
   );
 };

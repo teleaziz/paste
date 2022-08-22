@@ -67,8 +67,8 @@ export const getUnpublishedPackageNames = (touchedFiles: string[], publicPackage
   const uniquePackages: Set<string> = new Set();
   touchedFiles.forEach((filePath) => {
     const packageName = getPackageNameFromPath(filePath, publicPackages);
-
-    if (filePath.includes('/src/')) {
+    // if we're touching source or the package.json file it needs to be published
+    if ((filePath.includes('/src/') || filePath.includes('/package.json')) && packageName != null) {
       uniquePackages.add(packageName);
     }
   });

@@ -1,35 +1,7 @@
 import missingChangesetCheck, {getMissingPackagesFromChangesets} from '../missing-changesets-check';
+import {mockPackList} from '../__fixtures__/mockPackageList';
 
 declare const global: any;
-
-const mockPackList = [
-  {
-    name: '@twilio-paste/avatar',
-    version: '0.0.0',
-    private: false,
-    location: '/Users/simon/dev/twilio/design-systems/paste/packages/paste-core/components/avatar',
-  },
-
-  {
-    name: '@twilio-paste/icons',
-    version: '0.0.0',
-    private: false,
-    location: '/Users/simon/dev/twilio/design-systems/paste/packages/paste-icons',
-  },
-
-  {
-    name: '@twilio-paste/core',
-    version: '0.0.0',
-    private: false,
-    location: '/Users/simon/dev/twilio/design-systems/paste/packages/paste-core/core-bundle',
-  },
-  {
-    name: '@twilio-paste/box',
-    version: '0.0.0',
-    private: true,
-    location: '/Users/simon/dev/twilio/design-systems/paste/packages/paste-core/primitives/box',
-  },
-];
 
 describe('getMissingPackagesFromChangesets()', () => {
   it('should not return the names of packages if none are missing from changesets', () => {
@@ -88,7 +60,7 @@ describe('missingChangesetCheck()', () => {
       git: {
         modified_files: [
           'package.json',
-          'packages/paste-codemods/package.json',
+          'packages/paste-codemods/build.js',
           'packages/paste-icons/src/index.tsx',
           'packages/paste-core/components/avatar/src/index.tsx',
           'packages/paste-core/primitives/box/src/index.tsx',
@@ -102,7 +74,7 @@ describe('missingChangesetCheck()', () => {
     expect(global.fail).toHaveBeenCalledTimes(1);
   });
 
-  it('should fail twice for two packages that are not in a changeset', () => {
+  it('should fail three times for three packages that are not in a changeset', () => {
     global.danger = {
       git: {
         modified_files: [
@@ -117,7 +89,7 @@ describe('missingChangesetCheck()', () => {
       },
     };
     missingChangesetCheck(mockPackList);
-    expect(global.fail).toHaveBeenCalledTimes(2);
+    expect(global.fail).toHaveBeenCalledTimes(3);
   });
 
   it('should not fail if all packages are covered', () => {
@@ -125,7 +97,7 @@ describe('missingChangesetCheck()', () => {
       git: {
         modified_files: [
           'package.json',
-          'packages/paste-codemods/package.json',
+          'packages/paste-codemods/build.js',
           'packages/paste-icons/src/index.tsx',
           'packages/paste-core/components/avatar/src/index.tsx',
           'packages/paste-core/primitives/box/src/index.tsx',

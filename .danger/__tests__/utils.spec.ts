@@ -155,7 +155,7 @@ describe('danger utils', () => {
         getUnpublishedPackageNames(
           [
             'package.json',
-            'packages/box/package.json',
+            'packages/box/build.js',
             'packages/paste-core/components/alert-dialog/stories/index.stories.tsx',
             'yarn.lock',
             '.changeset/pretty-cameras-burn.md',
@@ -178,17 +178,24 @@ describe('danger utils', () => {
       ).toEqual([]);
     });
 
-    it('should return the names of packages with src files updated', () => {
+    it('should return the names of packages with src files or package.json updated', () => {
       expect(
         getUnpublishedPackageNames(
           [
             'package.json',
             'packages/paste-style-props/src/index.ts',
+            'packages/paste-core/components/avatar/package.json',
             'packages/paste-core/components/alert-dialog/stories/index.stories.tsx',
             'yarn.lock',
             '.changeset/pretty-cameras-burn.md',
           ],
           [
+            {
+              name: '@twilio-paste/avatar',
+              version: '3.1.0',
+              private: false,
+              location: '/Users/simon/dev/twilio/design-systems/paste/packages/paste-core/components/avatar',
+            },
             {
               name: '@twilio-paste/alert-dialog',
               version: '3.1.0',
@@ -203,7 +210,7 @@ describe('danger utils', () => {
             },
           ]
         )
-      ).toEqual(['@twilio-paste/style-props']);
+      ).toEqual(['@twilio-paste/style-props', '@twilio-paste/avatar']);
 
       expect(
         getUnpublishedPackageNames(

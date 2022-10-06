@@ -1,7 +1,7 @@
-import {PopoverArrow} from './Popover/PopoverArrow';
-import type {PopoverArrowProps} from './Popover/PopoverArrow';
-import {TooltipArrow} from './Tooltip/TooltipArrow';
-import type {TooltipArrowProps} from './Tooltip/TooltipArrow';
+export {PopoverArrow} from './Popover/PopoverArrow';
+export type {PopoverArrowProps} from './Popover/PopoverArrow';
+export {TooltipArrow} from './Tooltip/TooltipArrow';
+export type {TooltipArrowProps} from './Tooltip/TooltipArrow';
 
 export {
   // https://reakit.io/docs/composite/
@@ -76,9 +76,3 @@ export type {
   TooltipProps,
   TooltipReferenceProps,
 } from 'reakit';
-
-export {PopoverArrow};
-export type {PopoverArrowProps};
-
-export {TooltipArrow};
-export type {TooltipArrowProps};

@@ -1,7 +1,8 @@
 import {DefaultTheme} from './default';
-import {SendGridTheme} from './sendgrid';
-import {DarkTheme} from './dark';
 
 const ConsoleTheme = DefaultTheme;
 
-export {DefaultTheme, ConsoleTheme, SendGridTheme, DarkTheme};
+export {ConsoleTheme};
+export {DefaultTheme} from './default';
+export {SendGridTheme} from './sendgrid';
+export {DarkTheme} from './dark';

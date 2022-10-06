@@ -6,7 +6,8 @@ import * as React from 'react';
 import {createComponent} from 'reakit-system/createComponent';
 import {createHook} from 'reakit-system/createHook';
 import {useForkRef} from 'reakit-utils/useForkRef';
-import {BoxOptions, BoxHTMLProps, useBox, PopoverStateReturn} from 'reakit';
+import type {BoxOptions, BoxHTMLProps, PopoverStateReturn} from 'reakit';
+import {useBox} from 'reakit';
 import {POPOVER_ARROW_KEYS} from './__keys';
 
 export type PopoverArrowOptions = BoxOptions &
@@ -41,7 +42,7 @@ export const usePopoverArrow = createHook<PopoverArrowOptions, PopoverArrowHTMLP
       bottom: 'rotateZ(360deg)',
       left: 'rotateZ(90deg)',
     };
-    const {unstable_arrowStyles: arrowStyles, fill, stroke} = options;
+    const {unstable_arrowStyles: arrowStyles, fill, stroke, size, unstable_arrowRef: arrowRef} = options;
     const transform = transformMap[placement];
 
     const children = React.useMemo(
@@ -63,10 +64,10 @@ export const usePopoverArrow = createHook<PopoverArrowOptions, PopoverArrowHTMLP
     );
 
     return {
-      ref: useForkRef(options.unstable_arrowRef, htmlRef),
+      ref: useForkRef(arrowRef, htmlRef),
       style: {
         ...arrowStyles,
-        fontSize: options.size,
+        fontSize: size,
         width: '1em',
         height: '1em',
         pointerEvents: 'none',

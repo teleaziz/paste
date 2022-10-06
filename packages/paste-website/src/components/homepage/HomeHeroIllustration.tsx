@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Box} from '@twilio-paste/box';
-import {ValueOf} from '@twilio-paste/types';
+import type {ValueOf} from '@twilio-paste/types';
 import {useReducedMotion} from '@twilio-paste/animation-library';
 import lottie from 'lottie-web';
 import VisibilitySensor from 'react-visibility-sensor';
@@ -48,12 +48,10 @@ const HomeHeroIllustration: React.FC = () => {
   React.useEffect(() => {
     if (!prefersReducedMotion && illustrationState === IllustrationStates.DYNAMIC) {
       // Dynamically import the animation so we don't load a huge json blob for everyone
-      // @ts-ignore
       import('../../assets/animations/homepage-hero-animation.json')
         .then((animationData) => {
           if (containerRef.current != null) {
             const anim = lottie.loadAnimation({
-              // @ts-ignore
               container: containerRef.current,
               renderer: 'svg',
               loop: false,

@@ -13,13 +13,13 @@ function clearBuiltFiles(dirPath = REACT_PATH): void {
   fs.readdir(dirPath, (readErr, files) => {
     if (readErr) throw readErr;
 
-    filterBuiltFiles(files).forEach((fileName) => {
+    for (const fileName of filterBuiltFiles(files)) {
       fs.unlink(path.join(dirPath, fileName), (unlinkErr) => {
         if (unlinkErr) {
           throw unlinkErr;
         }
       });
-    });
+    }
   });
 }
 

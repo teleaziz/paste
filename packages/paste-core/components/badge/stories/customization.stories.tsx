@@ -7,7 +7,7 @@ import {Stack} from '@twilio-paste/stack';
 import {Card} from '@twilio-paste/card';
 import {Badge} from '../src';
 import type {BadgeVariants} from '../src/types';
-import {Story} from '@storybook/react';
+import type {Story} from '@storybook/react';
 
 export const makeBadge = (variant: BadgeVariants, element?: string): React.ReactElement => (
   <Badge as="span" element={element} variant={variant} data-testid={`${variant}_badge`}>

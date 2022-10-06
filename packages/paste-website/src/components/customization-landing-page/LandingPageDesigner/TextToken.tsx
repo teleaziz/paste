@@ -29,7 +29,7 @@ export const TextTokenInput: React.FC<TextTokenInputProps> = ({bucket, labelText
           // TODO validate
           if (value === '') return;
           if (onChange != null) {
-            onChange(bucket, tokenName, event.target.value);
+            onChange(bucket, tokenName, value);
           }
         }}
       />

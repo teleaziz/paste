@@ -28,7 +28,7 @@ export const filterByDateRange = (dateCompleted: Date, filterValue: DateRanges):
     day: 1,
     oneWeek: 7,
     twoWeeks: 14,
-    all: Infinity,
+    all: Number.POSITIVE_INFINITY,
   };
 
   return dateDifference(today, dateCompleted) <= rangeMap[filterValue];

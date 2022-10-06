@@ -140,19 +140,19 @@ export const getNormalizedNavigationData = (data: GraphqlData): GraphqlData => {
   const queryKeys = Object.keys(data);
   const normalizedData: Record<string, GraphqlData> = {};
 
-  queryKeys.forEach((currentKey) => {
+  for (const currentKey of queryKeys) {
     if (shouldFlatten(currentKey)) {
       const dataFragment = data[currentKey].edges;
       const mutateOperation = getNavigationDataMutation(currentKey);
       let res: Array<GraphqlData> = [];
 
-      dataFragment.forEach((currentPackage: GraphqlData) => {
+      for (const currentPackage of dataFragment) {
         const mutatedData = mutateOperation(currentPackage.node);
         res = [...res, mutatedData];
-      });
+      }
       normalizedData[currentKey] = res;
     }
-  });
+  }
 
   return normalizedData;
 };

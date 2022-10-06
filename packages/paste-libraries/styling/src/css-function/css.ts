@@ -11,9 +11,9 @@ interface GetFunc {
 export const get: GetFunc = (object, key, fallback) => {
   const keyAsArray = key && typeof key === 'string' ? key.split('.') : [key];
   let values: any = object;
-  keyAsArray.forEach((k) => {
+  for (const k of keyAsArray) {
     values = values ? values[k] : undefined;
-  });
+  }
   return values === undefined ? fallback : values;
 };
 

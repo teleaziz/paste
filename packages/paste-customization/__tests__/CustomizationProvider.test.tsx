@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import {render, screen} from '@testing-library/react';
 import {CustomizationProvider, CustomizationConsumer} from '../src';
 
@@ -47,10 +46,6 @@ const BaseThemeConsumerExample: React.FC<BaseThemeConsumerExampleProps> = (props
 };
 
 describe('CustomizationProvider', () => {
-  it('should render without crashing', (): void => {
-    ReactDOM.render(<CustomizationProvider />, document.createElement('div'));
-  });
-
   it('should inherit one of two base themes', () => {
     render(
       <>

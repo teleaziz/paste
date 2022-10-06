@@ -18116,6 +18116,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"color@npm:^4.2.3":
+  version: 4.2.3
+  resolution: "color@npm:4.2.3"
+  dependencies:
+    color-convert: ^2.0.1
+    color-string: ^1.9.0
+  checksum: 0579629c02c631b426780038da929cca8e8d80a40158b09811a0112a107c62e10e4aad719843b791b1e658ab4e800558f2e87ca4522c8b32349d497ecb6adeb4
+  languageName: node
+  linkType: hard
+
 "colord@npm:^2.9.1":
   version: 2.9.2
   resolution: "colord@npm:2.9.2"
@@ -35176,7 +35186,7 @@ fsevents@^1.2.7:
     chalk: ^2.4.2
     chromatic: ^5.5.0
     chrome-aws-lambda: ^10.0.0
-    color: ^3.1.2
+    color: ^4.2.3
     commander: ^2.20.0
     concurrently: ^4.1.1
     cross-env: ^5.2.0

@@ -1,5 +1,4 @@
-import {ThemeProvider, StyledBase} from './themeProvider';
-import type {ThemeProviderProps} from './themeProvider';
+import {ThemeProvider} from './themeProvider';
 import {ThemeConsumer} from './themeConsumer';
 
 const Theme = {
@@ -10,8 +9,8 @@ const Theme = {
 export {pasteBaseStyles} from './styles/base';
 export {pasteGlobalStyles} from './styles/global';
 export {pasteFonts} from './styles/fonts';
-export {StyledBase};
-export type {ThemeProviderProps};
+export {StyledBase} from './themeProvider';
+export type {ThemeProviderProps} from './themeProvider';
 export type {ThemeShape, SendGridThemeShape, ConsoleThemeShape, DarkThemeShape} from './types/themes';
 export type {GenericThemeShape} from './types/GenericThemeShape';
 export {DefaultTheme, ConsoleTheme, SendGridTheme, DarkTheme} from './themes';

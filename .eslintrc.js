@@ -90,7 +90,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 'off',
     // Warn about incorrect type imports
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-imports.md
-    '@typescript-eslint/consistent-type-imports': 'warn',
+    '@typescript-eslint/consistent-type-imports': 'error',
     // PropTypes are useless with typescript
     'react/prop-types': 'off',
     // ignore dev deps by default, point eslint to all package.json files in the monorepo
@@ -119,6 +119,7 @@ module.exports = {
     ],
     // We don't use jasmine and this clashes with danger js
     'jest/no-jasmine-globals': 'off',
+    'jest/expect-expect': 'error',
     // New rules
     'unicorn/no-array-reduce': 'warn',
     'unicorn/no-array-for-each': 'warn',

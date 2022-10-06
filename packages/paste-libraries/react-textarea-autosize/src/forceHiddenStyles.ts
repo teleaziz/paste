@@ -11,7 +11,7 @@ const HIDDEN_TEXTAREA_STYLE = {
 };
 
 export const forceHiddenStyles = (node: HTMLElement): void => {
-  Object.keys(HIDDEN_TEXTAREA_STYLE).forEach((key) => {
+  for (const key of Object.keys(HIDDEN_TEXTAREA_STYLE)) {
     node.style.setProperty(key, HIDDEN_TEXTAREA_STYLE[key as keyof typeof HIDDEN_TEXTAREA_STYLE], 'important');
-  });
+  }
 };

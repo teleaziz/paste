@@ -197,7 +197,7 @@
     "husky": "^3.0.0",
     "immutable": "^4.0.0-rc.12",
     "jest": "27.5.1",
-    "lerna": "^4.0.0",
+    "lerna": "^5.6.2",
     "lodash": "4.17.21",
     "lorem-ipsum": "^2.0.3",
     "netlify-cli": "^6.13.1",
@@ -239,5 +239,5 @@
       "pre-push": "if git-branch-is main; then yarn pre-push; fi"
     }
   },
-  "packageManager": "yarn@3.1.0"
+  "packageManager": "yarn@3.2.4"
 }
